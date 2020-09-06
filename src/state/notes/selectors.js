@@ -1,13 +1,13 @@
 import { selectorFamily, selector } from "recoil";
 import { notesStateFamily, noteStateList } from "./atoms";
-import ws, { send } from "../../ws";
+import { send } from "../../ws";
 
 export const notesSelectorFamily = selectorFamily({
     key: 'sticky-note-family',
     get: id => ({get}) => get(notesStateFamily(id)),
     set: id => ({set}, note) => {
         send('notes.update',note);
-        set(notesStateFamily(id), note)
+        set(notesStateFamily(id), note);
     }
 });
 
@@ -44,7 +44,7 @@ export const deleteNoteSelector = selector({
 
 export const updateNoteSelector = selector({
     key: 'sticky-note-list-update',
-    set: ({set, get}, data) => {
+    set: ({ set }, data) => {
         set(notesStateFamily(data.id), data);
     }
 });
