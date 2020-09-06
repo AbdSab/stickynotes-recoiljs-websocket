@@ -33,7 +33,6 @@ const StickyNote = ({id=0}) => {
     useEffect(() => {
         const resize = e => {
             if(e.target === refText.current && !draging){
-                console.log(!draging);
                 setNote({...note, width: refText.current.offsetWidth, height: refText.current.offsetHeight})
             }
         }
