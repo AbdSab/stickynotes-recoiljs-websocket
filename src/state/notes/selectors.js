@@ -38,7 +38,7 @@ export const deleteNoteSelector = selector({
     set: ({set, get}, id) => {
         const list = get(noteStateList);
         set(noteStateList, [...list.filter(_id => _id !== id)]);
-        send('notes.delete', id);
+        send('notes.delete', {id});
     }
 })
 
