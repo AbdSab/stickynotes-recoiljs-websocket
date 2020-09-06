@@ -1,4 +1,3 @@
-
 const ws = new WebSocket(process.env.REACT_APP_WS_HOST);
 ws.onopen = () => {
     console.log("WS Connexion Sucess");
