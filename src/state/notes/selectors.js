@@ -37,6 +37,8 @@ export const deleteNoteSelector = selector({
     key: 'sticky-note-list-delete',
     set: ({set, get}, id) => {
         const list = get(noteStateList);
+        const found = list.findIndex(_id => _id === id);
+        if(found === -1) return;
         set(noteStateList, [...list.filter(_id => _id !== id)]);
         send('notes.delete', {id});
     }
