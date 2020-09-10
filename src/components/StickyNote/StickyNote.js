@@ -77,7 +77,7 @@ const StickyNote = ({id=0}) => {
         <div ref={ref} className="stickynote" style={position}>
             <div className="stickynote__header" onMouseDown={handleClick} />
             <div className="stickynote__close" onClick={handleDeleteNote}>X</div>
-            <textarea ref={refText} value={note.content} onChange={handleTextChange} style={size}/>
+            <textarea ref={refText} placeholder="Empty Note..." value={note.content} onChange={handleTextChange} style={size}/>
         </div>
     )
 }
